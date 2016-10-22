@@ -4,12 +4,20 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Guess the number");
-        int range = 10;
-        int number = (int) (Math.random() * range);
+    private static Scanner scanner = new Scanner(System.in);
 
+    public static void main(String[] args) {
+        System.out.println("Guess the number");
+        int range = 30;
+        int number = (int) (Math.random() * range);
+        playLevel(range, number);
+
+        scanner.close();
+
+
+    }
+
+    private static void playLevel(int range, int number) {
         while(true) {
             System.out.println("Guess the digit from 0 to " + range);
             int input_number = scanner.nextInt();
@@ -22,9 +30,5 @@ public class Main {
                 System.out.println("Digit is bigger");
             }
         }
-
-        scanner.close();
-
-
     }
 }
